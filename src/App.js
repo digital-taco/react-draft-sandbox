@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './index.css'
+import PropTypes from 'prop-types'
 
-function App() {
+function App({ name, bacon = 'yes', cookies = 1000, noPropTypeHere = 'potato'}) {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          {name}
+        </div>
+        <div>
+          {bacon}
+        </div>
+        <div>
+          {cookies + 100}
+        </div>
       </header>
     </div>
   );
 }
 
 export default App;
+
+App.propTypes = {
+  name: PropTypes.string,
+  bacon: PropTypes.string,
+  cookies: PropTypes.number,
+}

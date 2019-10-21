@@ -13,7 +13,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "draft": "draft"
+    "draft": "draft",
+    "draft:debug": "ndb draft"
   },
   "eslintConfig": {
     "extends": "react-app"

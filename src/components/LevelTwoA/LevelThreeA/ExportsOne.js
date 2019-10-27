@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-function Component ({ propOne, propTwo = 2, propThree='Three', noPropTypeHere = 'missing prop types for this'}) {
+function DoHickey ({ propOne, propTwo = 2, propThree='Three', noPropTypeHere = 'missing prop types for this'}) {
   return (
-    <div>
+    <div style={{background: 'red', padding: 20}}>
+      <h1>DoHickey</h1>
         <div>
           {propOne}
         </div>
@@ -20,9 +21,9 @@ function Component ({ propOne, propTwo = 2, propThree='Three', noPropTypeHere = 
   );
 }
 
-export default Component;
+export default DoHickey;
 
-Component.propTypes = {
+DoHickey.propTypes = {
   propOne: PropTypes.string,
   propTwo: PropTypes.number,
   propThree: PropTypes.string,

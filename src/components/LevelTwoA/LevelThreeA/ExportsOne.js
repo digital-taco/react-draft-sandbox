@@ -7,6 +7,7 @@ function DoHickey ({ propOne, propTwo = 2, propThree='Three', noPropTypeHere = '
       <h1>DoHickey</h1>
         <div>
           {propOne}
+          
         </div>
         <div>
           {propTwo}

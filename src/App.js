@@ -1,54 +1,45 @@
 import React from 'react';
 import './App.css';
 import './index.css'
-import PropTypes from 'prop-types'
 
-function PropValue({ propName, propValue, propType }) {
-  return (
-    <>
-      <div data-prop-type>{propType}</div>{' '}
-      <div data-prop-name>{propName}</div>{' '}
-      <div data-prop-value>{propValue}</div>
-    </>
-  )
+import TitleBar from './components/TitleBar'
+import Button from './components/Button'
+import Container from './components/Container'
+
+const textStyle = {
+  textAlign: 'center',
+  maxWidth: '50%',
+  margin: '0 auto',
+  lineHeight: 2,
+  textShadow: '1px 1px 3px #ff1',
+  padding: '24px 0',
+  fontSize: 18,
+  letterSpacing: 1.3,
+  fontWeight: 300,
 }
 
-function App({
-  name = 'Draft',
-  cookies = 1000,
-  noPropTypeHere,
-  isOpen,
-  infoObject,
-  doThang,
-  things,
-  thingsOftype,
-}) {
+function App() {
   return (
     <div className="App">
-      <PropValue propType="string" propName="name" propValue={name} />
-      <PropValue propType="number" propName="cookies" propValue={cookies} />
-      <PropValue propType="boolean" propName="isOpen" propValue={isOpen ? 'true' : 'false'} />
-      <PropValue propType="string" propName="noPropTypeHere" propValue={noPropTypeHere} />
-      <PropValue propType="object" propName="infoObject" propValue={JSON.stringify(infoObject)} />
-      <PropValue propType="func" propName="doThang" propValue={JSON.stringify(doThang)} />
-      <PropValue propType="array" propName="things" propValue={JSON.stringify(things)} />
-      <PropValue propType="arrayOf" propName="thingsOftype" propValue={JSON.stringify(thingsOftype)} />
+      <TitleBar title="Lunar Bears" />
+      <Container padding="md">
+        <div style={textStyle}>
+          For many years, people have doubted the existence of <i>Ursidae Luna</i>, or the "Lunar Bear", despite overwhelming evidence. Doubt no more! We have conclusive literature, media, and interviews with officials depicting these beautiful moon-wandering creatures.
+        </div>
+        <div style={textStyle}>
+          Doubt no more! Explore our site to learn more.
+        </div>
+        <div style={{textAlign: 'center'}}>
+          <Button onClick={() => window.alert('Have cake')} label="Learn More about Lunar Bears" />
+        </div>
+      </Container>
+      <div id="stars-container">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+      </div>
     </div>
   );
 }
 
-App.propTypes = {
-  cookies: PropTypes.number,
-  doThang: PropTypes.func,
-  infoObject: PropTypes.object,
-  isOpen: PropTypes.bool,
-  name: PropTypes.string,
-  things: PropTypes.array,
-  thingsOftype: PropTypes.arrayOf
-}
-
 export default App;
-
-const NonExportedComponent = () => {
-  return <div />
-}

@@ -20,6 +20,7 @@ function PropsTable({
   isOpen,
   infoObject,
   doThang,
+  selectedEnum,
   things,
   thingsOftype,
 }) {
@@ -29,6 +30,7 @@ function PropsTable({
       <PropValue propType="number" propName="cookies" propValue={cookies} />
       <PropValue propType="boolean" propName="isOpen" propValue={isOpen ? 'true' : 'false'} />
       <PropValue propType="string" propName="noPropTypeHere" propValue={noPropTypeHere} />
+      <PropValue propType="oneOf" propName="selectedEnum" propValue={JSON.stringify(selectedEnum)} />
       <PropValue propType="object" propName="infoObject" propValue={JSON.stringify(infoObject)} />
       <PropValue propType="func" propName="doThang" propValue={JSON.stringify(doThang)} />
       <PropValue propType="array" propName="things" propValue={JSON.stringify(things)} />
@@ -42,6 +44,7 @@ PropsTable.propTypes = {
   doThang: PropTypes.func,
   infoObject: PropTypes.object,
   isOpen: PropTypes.bool,
+  selectedEnum: PropTypes.oneOf(['choiceOne', 'choiceTwo', 'choiceThree']),
   name: PropTypes.string,
   things: PropTypes.array,
   thingsOftype: PropTypes.arrayOf

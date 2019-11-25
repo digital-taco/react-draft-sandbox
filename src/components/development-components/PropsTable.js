@@ -1,13 +1,13 @@
 import React from 'react';
-import './App.css';
-import './index.css'
 import PropTypes from 'prop-types'
+
+import styles from './PropsTable.module.css'
 
 function PropValue({ propName, propValue, propType }) {
   return (
     <>
       <div data-prop-type>{propType}</div>{' '}
-      <div data-prop-name>{propName}</div>{' '}
+      <div data-prop-name><i>{propName}</i></div>{' '}
       <div data-prop-value>{propValue}</div>
     </>
   )
@@ -24,7 +24,7 @@ function PropsTable({
   thingsOftype,
 }) {
   return (
-    <div className="App">
+    <div className={styles.propsTable}>
       <PropValue propType="string" propName="name" propValue={name} />
       <PropValue propType="number" propName="cookies" propValue={cookies} />
       <PropValue propType="boolean" propName="isOpen" propValue={isOpen ? 'true' : 'false'} />

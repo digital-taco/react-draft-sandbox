@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const barStyle = {
   height: 60,
@@ -28,3 +29,9 @@ export default function TitleBar({ title }) {
     </div>
   )
 }
+
+
+TitleBar.propTypes = {
+  title: PropTypes.string,
+}
+

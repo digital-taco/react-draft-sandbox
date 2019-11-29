@@ -1,11 +1,10 @@
-.App {
-  background-color: #181818;
-  color: white;
-  height: 100vh;
-}
 
 .App {
-	content:"e";
+  color: white;
+  background-color: #181818;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow-y: hidden;
 }
 
 #stars-container {

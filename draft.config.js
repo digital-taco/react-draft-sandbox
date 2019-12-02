@@ -1,3 +1,5 @@
 module.exports = {
-  title: 'Lunar Bears',
+  // ignore: [],
+  // wrapperPath: '',
+  // additionalReactModules: [],
 }

@@ -34,7 +34,7 @@ function PropsTable({
       <PropValue propType="object" propName="infoObject" propValue={JSON.stringify(infoObject)} />
       <PropValue propType="func" propName="doThang" propValue={JSON.stringify(doThang)} />
       <PropValue propType="array" propName="things" propValue={JSON.stringify(things)} />
-      <PropValue propType="arrayOf" propName="thingsOftype" propValue={JSON.stringify(thingsOftype)} />
+      {/* <PropValue propType="arrayOf" propName="thingsOftype" propValue={JSON.stringify(thingsOftype)} /> */}
     </div>
   );
 }
@@ -47,7 +47,6 @@ PropsTable.propTypes = {
   selectedEnum: PropTypes.oneOf(['choiceOne', 'choiceTwo', 'choiceThree']),
   name: PropTypes.string,
   things: PropTypes.array,
-  thingsOftype: PropTypes.arrayOf
 }
 
 export default PropsTable;

@@ -31,12 +31,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // Add the app container so react can render
 
 
-const container = document.createElement('div');
-document.body.appendChild(container);
-container.setAttribute('id', 'demo');
 
 function deserializeAll(states) {
   return Object.fromEntries(Object.entries(states).map(([s, v]) => [s, Object(_lib_helpers__WEBPACK_IMPORTED_MODULE_2__["deserialize"])(v)]));

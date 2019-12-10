@@ -2438,7 +2438,7 @@ function Settings() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "mAmL");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "mAmL");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "OXAJ");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
@@ -2533,7 +2533,7 @@ function Page() {
     },
     "data-tabsopen": tabs.length > 0 ? '' : undefined,
     title: "demo",
-    src: `${process.env.PUBLIC_PATH || '/'}demo`
+    src: `${"/META-react-draft-sandbox/" || false}demo`
   }));
 } // Render the demo in the dom
 
@@ -2541,7 +2541,6 @@ function Page() {
 react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])(_StorageContext__WEBPACK_IMPORTED_MODULE_8__["default"], null, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])(_SelectedProvider__WEBPACK_IMPORTED_MODULE_7__["default"], {
   components: _out_master_exports__WEBPACK_IMPORTED_MODULE_3__["default"]
 }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])(_Settings_SettingsProvider__WEBPACK_IMPORTED_MODULE_6__["default"], null, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])(Page, null)))), document.getElementById('app'));
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/process/browser.js */ "dnJP")))
 
 /***/ }),
 

@@ -2,9 +2,8 @@ const path = require('path')
 
 module.exports = {
   ignore: [
-    /\.stories\./,
-    /\.test\./,
-    /\.config\./,
+    'ignored-files/',
+    'draft-build/',
   ],
 
   // wrapperPath: '',

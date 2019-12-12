@@ -43,6 +43,8 @@ function Page() {
   const [propStates, setPropStates] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({});
 
   function receiveMessage(type, data) {
+    if (undefined) console.log('DEMO | Message Received: ', type, data);
+
     switch (type) {
       // When a new component is selected in the explorer
       case 'SELECTED_COMPONENT':
@@ -68,10 +70,10 @@ function Page() {
     return () => window.removeEventListener('message', handleMessage);
   }, []); // Wrap the demo in the provided Wrapper or just a fragment
 
-  const DemoWrapper = _out_master_exports__WEBPACK_IMPORTED_MODULE_3__["default"].Wrapper || react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment;
+  const Wrapper = _out_master_exports__WEBPACK_IMPORTED_MODULE_3__["default"].Wrapper || react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment;
   return SelectedComponent ? Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(_ErrorBoundary__WEBPACK_IMPORTED_MODULE_4__["default"], {
     key: SelectedComponent.meta.componentHash
-  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(DemoWrapper, null, SelectedComponent && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(SelectedComponent, deserializeAll(propStates)))) : null;
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(Wrapper, null, SelectedComponent && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(SelectedComponent, deserializeAll(propStates)))) : null;
 } // Render the demo in the dom
 
 

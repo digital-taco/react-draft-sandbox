@@ -15,11 +15,10 @@
     "eject": "react-scripts eject",
     "draft": "draft",
     "draft:debug": "ndb draft",
-    "deploy": "WRITE_TO_DISK=true PUBLIC_PATH='/META-react-draft-sandbox/' draft& rm -rf ./draft-build && sleep 15 && echo 'Deploying...' && gh-pages -d draft-build && killall node"
+    "deploy": "WRITE_TO_DISK=true PUBLIC_PATH='/react-draft-sandbox/' draft& rm -rf ./draft-build && sleep 15 && echo 'Deploying...' && gh-pages -d draft-build && killall node"
   },
   "eslintConfig": {
-    "extends": "react-app",
-    "ignorePatterns": ["draft-build/", "node_modules/"]
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [

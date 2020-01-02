@@ -14,39 +14,54 @@ function PropValue({ propName, propValue, propType }) {
 }
 
 function PropsTable({
-  name = 'Draft',
-  cookies = 1000,
-  noPropTypeHere,
-  isOpen,
-  infoObject,
-  doThang,
-  selectedEnum,
-  things,
+  stringProp = 'Draft',
+  numberProp = 1000,
+  missingPropType,
+  boolProp,
+  objectProp,
+  funcProp,
+  enumProp,
+  arrayProp,
   thingsOftype,
 }) {
   return (
     <div className={styles.propsTable}>
-      <PropValue propType="string" propName="name" propValue={name} />
-      <PropValue propType="number" propName="cookies" propValue={cookies} />
-      <PropValue propType="boolean" propName="isOpen" propValue={isOpen ? 'true' : 'false'} />
-      <PropValue propType="string" propName="noPropTypeHere" propValue={noPropTypeHere} />
-      <PropValue propType="oneOf" propName="selectedEnum" propValue={JSON.stringify(selectedEnum)} />
-      <PropValue propType="object" propName="infoObject" propValue={JSON.stringify(infoObject)} />
-      <PropValue propType="func" propName="doThang" propValue={JSON.stringify(doThang)} />
-      <PropValue propType="array" propName="things" propValue={JSON.stringify(things)} />
+      <PropValue propType="string" propName="stringProp" propValue={stringProp} />
+      <PropValue propType="number" propName="numberProp" propValue={numberProp} />
+      <PropValue propType="boolean" propName="boolProp" propValue={boolProp ? 'true' : 'false'} />
+      <PropValue propType="oneOf" propName="enumProp" propValue={enumProp} />
+      <PropValue propType="object" propName="objectProp" propValue={JSON.stringify(objectProp)} />
+      <PropValue propType="func" propName="funcProp" propValue={funcProp && funcProp.toString()} />
+      <PropValue propType="array" propName="arrayProp" propValue={JSON.stringify(arrayProp)} />
       {/* <PropValue propType="arrayOf" propName="thingsOftype" propValue={JSON.stringify(thingsOftype)} /> */}
+
+      {/* Missing Prop Type */}
+      <PropValue propType="string" propName="missingPropType" propValue={missingPropType} />
     </div>
   );
 }
 
 PropsTable.propTypes = {
-  cookies: PropTypes.number,
-  doThang: PropTypes.func,
-  infoObject: PropTypes.object,
-  isOpen: PropTypes.bool,
-  selectedEnum: PropTypes.oneOf(['choiceOne', 'choiceTwo', 'choiceThree']),
-  name: PropTypes.string,
-  things: PropTypes.array,
+  /** A number prop */
+  numberProp: PropTypes.number,
+
+  /** A function prop */
+  funcProp: PropTypes.func,
+
+  /** An object prop */
+  objectProp: PropTypes.object,
+
+  /** A boolean prop */
+  boolProp: PropTypes.bool,
+
+  /** An enum prop */
+  enumProp: PropTypes.oneOf(['choiceOne', 'choiceTwo', 'choiceThree']),
+
+  /** A string prop */
+  stringProp: PropTypes.string,
+
+  /** An array prop */
+  arrayProp: PropTypes.array,
 }
 
 export default PropsTable;

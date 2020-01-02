@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function Button({ label = 'Click Me', onClick, ...props }) {
+export default function Button({ onClick, label = onClick ? 'Click Meee' : 'Nothing Will Happen', ...props }) {
   return (
     <button style={{
       appearance: 'none',

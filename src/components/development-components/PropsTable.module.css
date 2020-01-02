@@ -17,5 +17,6 @@
   font-weight: bold;
 }
 .propsTable [data-prop-value] {
-  color: red;
+  color: limegreen;
+  font-weight: bold;
 }

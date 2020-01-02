@@ -33,6 +33,7 @@
     ]
   },
   "devDependencies": {
+    "@digital-taco/react-draft": "^0.2.12",
     "gh-pages": "^2.1.1"
   }
 }

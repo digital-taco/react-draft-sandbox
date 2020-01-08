@@ -13,15 +13,27 @@ function PropValue({ propName, propValue, propType }) {
   )
 }
 
+function stringify(obj) {
+  try {
+    return JSON.stringify(obj, null, 4)
+  } catch (e) {
+    return 'Unable to stringify'
+  }
+}
+
 function PropsTable({
   stringProp = 'Draft',
   numberProp = 1000,
   missingPropType,
   boolProp,
   objectProp,
+  shapeProp,
+  exactProp,
   funcProp,
   enumProp,
   arrayProp,
+  nodeProp,
+  customProp,
   thingsOftype,
 }) {
   return (
@@ -30,13 +42,20 @@ function PropsTable({
       <PropValue propType="number" propName="numberProp" propValue={numberProp} />
       <PropValue propType="boolean" propName="boolProp" propValue={boolProp ? 'true' : 'false'} />
       <PropValue propType="oneOf" propName="enumProp" propValue={enumProp} />
-      <PropValue propType="object" propName="objectProp" propValue={JSON.stringify(objectProp)} />
+      <PropValue propType="object" propName="objectProp" propValue={stringify(objectProp)} />
+      <PropValue propType="shape" propName="shapeProp" propValue={stringify(shapeProp)} />
+      <PropValue propType="exact" propName="exactProp" propValue={stringify(exactProp)} />
       <PropValue propType="func" propName="funcProp" propValue={funcProp && funcProp.toString()} />
-      <PropValue propType="array" propName="arrayProp" propValue={JSON.stringify(arrayProp)} />
+      <PropValue propType="array" propName="arrayProp" propValue={stringify(arrayProp)} />
+      <PropValue propType="node" propName="nodeProp" propValue={nodeProp} />
+      <PropValue propType="custom" propName="customProp" propValue={customProp} />
       {/* <PropValue propType="arrayOf" propName="thingsOftype" propValue={JSON.stringify(thingsOftype)} /> */}
 
       {/* Missing Prop Type */}
       <PropValue propType="string" propName="missingPropType" propValue={missingPropType} />
+
+      {nodeProp}
+      {objectProp && objectProp.test}
     </div>
   );
 }
@@ -44,12 +63,6 @@ function PropsTable({
 PropsTable.propTypes = {
   /** A number prop */
   numberProp: PropTypes.number,
-
-  /** A function prop */
-  funcProp: PropTypes.func,
-
-  /** An object prop */
-  objectProp: PropTypes.object,
 
   /** A boolean prop */
   boolProp: PropTypes.bool,
@@ -62,6 +75,29 @@ PropsTable.propTypes = {
 
   /** An array prop */
   arrayProp: PropTypes.array,
+
+  /** An object prop */
+  objectProp: PropTypes.object,
+
+  /** A shape prop */
+  shapeProp: PropTypes.shape({
+    canHaveThis: PropTypes.string
+  }),
+
+  /** An exact prop */
+  exactProp: PropTypes.exact({
+    mustHaveThis: PropTypes.string
+  }),
+
+  /** A function prop */
+  funcProp: PropTypes.func,
+
+  /** A node prop */
+  nodeProp: PropTypes.node,
+
+  /** A custom prop */
+  customProp: () => null,
+
 }
 
 export default PropsTable;

@@ -17,6 +17,7 @@
   font-weight: bold;
 }
 .propsTable [data-prop-value] {
+  white-space: pre;
   color: limegreen;
   font-weight: bold;
 }

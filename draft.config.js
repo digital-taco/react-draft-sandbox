@@ -8,6 +8,8 @@ module.exports = {
 
   port: 8082,
 
+  openAtLaunch: false,
+
   /*
   babel: {
     ... same config you would put into a webpack config for babel-loader

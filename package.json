@@ -4,6 +4,7 @@
   "private": true,
   "main": "./src/App.js",
   "dependencies": {
+    "@digital-taco/react-draft": "^0.5.8",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0"
@@ -33,7 +34,6 @@
     ]
   },
   "devDependencies": {
-    "@digital-taco/react-draft": "^0.2.12",
     "gh-pages": "^2.1.1"
   }
 }
